@@ -1,0 +1,18 @@
+<h3>
+	{{post.title}} 
+</h3>
+<p class="author">
+  <small>
+    <i class="icon-user"></i>
+    {{post.author}}
+    |
+    <i class="icon-calendar"></i>
+    {{post.created_at.sec|date('m/d/Y')}}
+    |
+  </small>
+</p>
+{% autoescape false %}
+<p>{{post.body|striptags('<a>,<b>,<u>,<small>,<strong>')|slice(0,300)}}...</p>
+{% endautoescape %}
+</p>
+<hr>

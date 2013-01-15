@@ -1,0 +1,39 @@
+{# layout.twig #}
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <link rel="stylesheet" href="/css/styles.css" media="all" >
+  <script src="/js/modernizr.custom.32189.js"></script>
+  <script src="/js/jquery.js"></script>
+  </script>
+</head>
+<body>
+  <div id="container">
+  {% include "main-nav.twig"%}
+    <div id="content">
+    <noscript>
+      <div  class='alert-error'>
+        <h1>Please enable Javascript to have the best experience with that website. thank you.</h1>
+      </div> 
+    </noscript>
+    <div class="page-header"><h1>{{title}}</h1></div>
+    {% include 'flash-message.twig' %}
+    {% block herounit %}
+    {% endblock %}
+    {% block content %}
+    {%endblock%}
+    </div>
+  </div>
+  {% include 'footer.twig'%}
+  <script>
+    //<![CDATA[
+!function ($) {
+      $('.alert .close').click(function(e) { 
+         $(e.srcElement).parent().remove();
+      });
+}(window.jQuery);
+    //]]>
+  </script>
+  <div class="hide" id="image_preload">
+</body>
+</html>

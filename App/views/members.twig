@@ -1,0 +1,24 @@
+{% extends "layout.twig"%}
+
+{% block content %}
+ <div class="members-list"> 
+ {% for member in members %}
+ <label>MemberId:</label>
+ <span class="value">{{ member.memberid }}</span> 
+ <label>Campus:</label>
+ <span class="value">{{ member.campus }}</span> 
+ <label>Email:</label>
+ <span class="value">{{ member.email }}</span> 
+ <label>Full Name:</label>
+ <span class="value">{{ member.full_name }}</span> 
+ <label>Expires At:</label>
+ <span class="value">{{ member.expires_at|date('Y, M j') }}</span> 
+ <label>Address:</label>
+ <span class="value">{{ member.street }}, {{ member.city }}, {{ member.zip }}<br>
+                     {{ member.province_state }}, {{ member.country }}  
+ </span> 
+ <hr>	
+ {% endfor %}
+ </div>
+{% endblock %}
+

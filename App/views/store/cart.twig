@@ -1,0 +1,66 @@
+{% extends "layout.twig"%}
+
+{% block content %}
+{% if cart_contents is empty %}
+Your shopping cart is empty.<br>
+If you find you are unable to add anything to
+your cart, please ensure that your internet browser has cookies enabled and
+that any other security software is not blocking your shopping session.
+{% else %}
+<script language="javascript">
+	function del(pid){
+		if(confirm('Do you really mean to delete this item')){
+			document.cart.pid.value=pid;
+			document.cart.command.value='delete';
+			document.cart.submit();
+		}
+	}
+	function clear_cart(){
+		if(confirm('This will empty your shopping cart, continue?')){
+			document.cart.command.value='clear';
+			document.cart.submit();
+		}
+	}
+	function update_cart(){
+		document.cart.command.value='update';
+		document.cart.submit();
+	}
+</script>
+<form name="cart" method="post" action="/store/cart">
+<input type="hidden" name="pid" />
+<input type="hidden" name="command" />
+  <div  id="cart-container" style="margin:0px auto; width:650px;" >
+    <table border="0" cellpadding="0px" cellspacing="1px" width="100%">
+        <tr>
+          <th></th><th align="left">Item</th>
+          <th align="center">Quantity</th>
+          <th align="center">Unit Price</th>
+          <th align="right">Cost</th>
+          <th align="center">Remove</th>
+        </tr>
+        {% for pid, product in cart_contents %}
+        <tr class="cart-line">
+          <td width="110" align="center"><img class="cart-max-sized" src="/images/products/{{ product.sku }}.png"></td>
+            <td align="left"><span class="title_green_21px_p">{{ product.name }}</span><br>
+              <span class="text_blue_12px_verd_0099CC">#{{ product.sku }}</span></td>
+          <td align="center"><input type="text" name="qty[{{ pid }}]" value="{{ product.quantity }}" 
+               maxlength="3" size="2" /></td>  
+          <td align="center">${{ product.price|number_format(2, '.', ',') }}</td>
+          <td align="right" id="cost_{{ pid }}">${{ product.price * product.quantity | number_format(2, '.', ',') }}</td>
+          <td align="center"><a href="javascript:del({{ pid }})"><img src="/images/remove.png"></a></td>
+        </tr>
+        {% endfor %}
+        <tr class="cart-bottom">
+          <td colspan="2"></td>
+          <td  align="center"><input type="button" value="Update Cart" onclick="update_cart()"></td>
+          <td colspan="2" align="right" id="cart_total">Order Total: ${{ cart_total|number_format(2,'.',',') }}</td>
+          <td align="center"><input type="button" value="Clear Cart" onclick="clear_cart()"></td>
+        </tr>
+      </table>
+      <div class="cartnav">
+        <a id="go-shopping" href="/store">Back to shopping</a> 
+        <a id="go-checkout" href="/store/checkout?step=1">Proceed to checkout</a>
+      </div>
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,455 @@
+body {
+  color: #413F36;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 22px;
+  background-color: #F4EFD6;
+}
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+.page-header h1 {
+  text-align: center;
+  margin: 10px auto;
+  color: #909090;
+}
+.footer {
+ clear: both;
+ position: relative;
+ z-index: 10;
+ height: 5em;
+ margin-top: -5em;
+ text-align: center;
+}
+.footer small {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+  line-height:14px;
+}
+#content { 
+  padding-bottom: 3em;
+ text-align: center; 
+}
+div.floatright { 
+  float: right; 
+  margin: 0 0 10px 10px;
+  text-align: center;
+}
+span.price {
+}
+.subtitle_orange_16px {
+  color: #FF6600;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.remarks {
+  text-align: center;
+}
+
+span.floatright {
+  float:right;
+}
+span.text_blue_12px_verd_0099CC {
+  color: #0099CC;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none; 
+}
+input.formblue2 {
+  background-color: #e9f1f8;
+  border: 1px solid #003366;
+  color: #003366;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-size: 11px;
+}
+img.cart-max-sized {
+  max-width: 100px;
+  max-height: 100px;
+}
+table#cart-container {
+}
+div#cart-container th {
+  background-color: #CC9966;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+div#cart-container tr.cart-line td {
+  border-bottom-style: dotted;
+  border-bottom-width: 2px;
+  border-bottom-color: #BBBBBB;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+div#cart-container tr.cart-bottom  {
+}
+div#cart-container tr.cart-bottom td {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border--bottom-color: #BBBBBB;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+div#cart-container .cartnav  a, form#frmCheckout input[type='submit'], form#frmCheckout input[type='button'] {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ff6600;
+  border: 1px solid #BBB;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  -moz-box-shadow: inset -7px 0 10px rgba(114,114,114, 0.4); /* Add inset shadow to each menu item. First 3 values in (114,114,114, 0.4) specifies rgb values, last specifies opacity */
+  -webkit-box-shadow: inset -7px 0 10px rgba(114,114,114, 0.4);
+  box-shadow: inset -7px 0 10px rgba(114,114,114, 0.4);
+  text-shadow: 0 -1px 1px #cfcfcf; /* CSS text shadow to give text some depth */
+  -moz-transition: all 0.2s ease-in-out; /* Enable CSS transition between property changes */
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+div#cart-container .cartnav  a:hover, form#frmCheckout input[type='submit']:hover, 
+form#frmCheckout input[type='button']:hover {
+  color: #ff3333;
+  -moz-box-shadow: inset -7px 0 10px rgba(60,162,221, 0.4), inset 0 0 12px rgba(60,162,221, 0.6); /* Add 2 inset shadows to each menu item  */
+  -webkit-box-shadow: inset -7px 0 10px rgba(60,162,221, 0.4), inset 0 0 12px rgba(60,162,221, 0.6);
+  box-shadow: inset -7px 0 10px rgba(60,162,221, 0.4), inset 0 0 12px rgba(60,162,221, 0.6);
+}
+div#cart-container a#go-shopping {
+  float: left;
+}
+div#cart-container a#go-checkout {
+  float: right;
+}
+span.title_green_21px_p {
+  color: #009900;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+  text-decoration: none;
+}
+.productbox {
+  padding: 5px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.productbox p {
+  text-align: left;
+}
+.productbox .divider {
+  clear: both;
+  border-bottom-style: dotted;
+  border-bottom-color:#0099ff;
+  text-align: center;
+}
+.productbox .divider form {
+  display: inline-block;
+  margin: 0 auto;
+}
+#navigation{
+width:100%;
+height:30px;
+background-color:#999;
+}
+#navigation ul {
+  margin:0px; padding:0px;
+}
+#navigation ul li { 
+  display:inline; 
+  height:30px; 
+  float:left;
+  list-style:none;
+  margin-top: 5px;
+  margin-left:15px;
+  position:relative;
+}
+#navigation li a {
+  color:#fff; 
+  text-decoration:none;
+}
+
+#navigation li a:hover {
+  text-decoration:underline;
+}
+#navigation li ul { 
+  margin:0px;
+  padding:0px;
+  display:none;
+  position:absolute;
+  left:0px; top:20px;
+  background-color:#999; 
+}
+
+#navigation li:hover ul { 
+  display:block;
+  width:120px;
+}
+
+#navigation li li { 
+  list-style:none;
+  display:list-item;
+  width:100%;
+}
+#navigation li li a {
+  color:#fff; text-decoration:none;
+}
+
+#navigation li li a:hover {
+  text-decoration:underline;
+}
+#header {
+  text-align: center;
+  position: relative;
+}
+#cart-indicator {
+  position: absolute;
+  top: -10px; right: 10px;
+  display: table;
+}
+#cart-indicator span {
+  display:table-cell; vertical-align:middle;
+}
+.shadowblockmenu{
+  border: 1px solid #BBB;
+  border-width: 1px 0; /* Show only top and bottom border for main menu container */
+  font-weight: bold;
+  font-size: 85%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 22px;
+  overflow: auto;
+  width: 100%
+}
+
+.shadowblockmenu ul.nav {
+  padding: 0;
+  margin:0 10px 0px 10px;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  float:left;
+}
+.shadowblockmenu ul.nav.pull-right {
+  float: right;
+  margin:0 10px 0px 10px;
+  display: inline-block;
+}
+
+.shadowblockmenu ul li{
+display: inline;
+margin:0 auto;
+padding:0;
+}
+
+.shadowblockmenu ul li a{
+display:inline-block;
+float:left;
+text-transform: uppercase;
+color: #494949;
+padding: 8px 15px 8px 9px;
+margin: 0;
+text-decoration: none;
+border-right: 1px solid #BBB; /*right border between menu items*/
+-moz-box-shadow: inset -7px 0 10px rgba(114,114,114, 0.4); /* Add inset shadow to each menu item. First 3 values in (114,114,114, 0.4) specifies rgb values, last specifies opacity */
+-webkit-box-shadow: inset -7px 0 10px rgba(114,114,114, 0.4);
+box-shadow: inset -7px 0 10px rgba(114,114,114, 0.4);
+text-shadow: 0 -1px 1px #cfcfcf; /* CSS text shadow to give text some depth */
+-moz-transition: all 0.2s ease-in-out; /* Enable CSS transition between property changes */
+-webkit-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+
+
+.shadowblockmenu li:nth-of-type(1) a{ /* Extra style for first menu link */
+border-left: 1px solid #BBB; /* add border to left side of first menu link */
+padding-left:25px;
+}
+
+.shadowblockmenu li:nth-of-type(2) a{ /* Extra style for 2nd menu link */
+padding-left:25px;
+}
+
+.shadowblockmenu ul li a:hover{
+color: black;
+-moz-box-shadow: inset -7px 0 10px rgba(60,162,221, 0.4), inset 0 0 12px rgba(60,162,221, 0.6); /* Add 2 inset shadows to each menu item  */
+-webkit-box-shadow: inset -7px 0 10px rgba(60,162,221, 0.4), inset 0 0 12px rgba(60,162,221, 0.6);
+box-shadow: inset -7px 0 10px rgba(60,162,221, 0.4), inset 0 0 12px rgba(60,162,221, 0.6);
+}
+.members-list {
+  margin:0 auto;
+  width:500px;
+  padding:14px;
+}
+.members-list hr {
+  clear: both;
+}
+.members-list label {
+  display:block;
+  font-weight:bold;
+  text-align:right;
+  width:140px;
+  float:left;
+}  
+.members-list label .small {
+  color:#666666;
+  display:block;
+  font-size:11px;
+  font-weight:normal;
+  text-align:right;
+  width:140px;
+}
+.members-list .value {
+  float:left;
+  font-size:12px;
+  width:300px;
+  margin:0px 0 5px 10px;
+  display: inline-block;
+  text-align: left;
+}
+#checkout-container h2 {
+  margin: auto;
+  text-align: center;
+  color: #669933;
+  margin-bottom: 7px;
+}
+#frmCheckout .entryTableHeader, #frmCheckout .infoTableHeader {
+  background-color: #CC9966;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+#frmCheckout .entryTableHeader td.label {
+  padding-left: 10px;
+}
+.entryTable, .infoTable {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #DDDDDD;
+}
+.entryTableHeader th.label, .infoTableHeader th.label {
+  text-align: right;
+}
+.entryTableHeader th.content {
+  text-align: left;
+}
+.entryTable,.infoTable {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #C96;
+}
+.infoTableHeader td.content, .entryTableHeader  td.content {
+  border-top-style: dotted;
+  border-top-width: 2px;
+  border-top-color: #C96;
+}
+.entryTable td.label, .infoTable td.label {
+	background-color: #FFCC99;
+  text-align: right;
+  margin-right:10px;
+  color: #996666;
+}
+.entryTable td.content, .infoTable td.content {
+	background-color: #FFFFCC;
+  text-align: left;
+  color: #686868;
+  font-weight: normal;
+}
+.entryTable td.content label {
+  margin-right: 20px;
+}
+.entryTable td.content input[type='text'] {
+  width: 280px;
+}
+#login-form {
+  margin:auto;
+  width: auto;
+  display: inline-block;
+}
+#login-form label {
+  display: block;
+  margin-top:7px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+}
+.alert-danger, .alert-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border-color: #EED3D7;
+  width: 80%;
+  margin: auto;
+  padding:3px;
+}
+.alert .close {
+  float:right;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 white;
+  opacity: .4;
+  color: black;
+  position: relative;
+  top: -2px;
+  right: 8px;
+  cursor: pointer;
+}
+form#signup-form {
+  margin:auto;
+  width: auto;
+  display: inline-block;
+}
+form#signup-form div div {
+  clear: both;
+}
+form#signup-form label {
+  /* display: inline-block; */
+  float: left;
+  width: 120px;
+  line-height: 1.8;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+}
+form#signup-form input, form#signup-form select {
+  width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+form#signup-form input[type='checkbox'] {
+  text-align: left;
+  float: left;
+  vertical-align: bottom;
+  position: relative;
+  width: auto;
+}
+form#signup-form input[type='submit'] {
+  margin-left: 120px;
+}
+form#frmCheckout input[type='submit'], form#frmCheckout input[type='button'] {
+  padding-left:20px;
+  padding-right: 20px;
+  background-color: transparent;
+}

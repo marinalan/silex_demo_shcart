@@ -1,0 +1,26 @@
+{% extends "layout.twig"%}
+
+{% block content %}
+<div class="productbox">
+ {% for product in products %}
+  <div class="productline">
+    <h2> {{ product.name }}
+      <span class="text_blue_12px_verd_0099CC floatright">
+        <b>Item #{{ product.sku }}</b>
+      </span>
+    </h2>
+    <p><div class="floatright"><img src="images/products/{{ product.sku }}.png"><br>
+    <span class="price subtitle_orange_16px">${{ product.price|number_format(2, '.', ',') }}</span></div>
+     {{ product.description }}</p>
+  </div>
+  <div class="divider">
+    <form action="store/cart" method="post" name="cart">
+        <div class="add_product">Please Send Me <input type="text" maxlength="2" size="2" class="formblue2" value="1" name="quantity"> Bottles</div> 
+        <input type="hidden" name="command" value="add"/>
+        <input type="hidden" value="{{ product.id }}" name="pid">
+				<input border="0" type="image" src="/images/btn_form_add_cart.gif" alt="Add to Cart" title=" Add to Cart " class="purchaseButton">
+				</form>
+  </div>
+ {% endfor %}
+</div>
+{% endblock %}

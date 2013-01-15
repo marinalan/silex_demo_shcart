@@ -1,0 +1,21 @@
+{
+    "require": {
+        "doctrine/dbal": "2.3.*",
+        "doctrine/orm": "*",
+        "twig/twig": "1.*",
+        "symfony/translation":"*",
+        "symfony/yaml": "2.1.*",
+        "symfony/validator": "2.1.*",
+        "symfony/class-loader": "2.1.*",
+        "symfony/form": "*",
+        "symfony/locale":"*",
+        "symfony/templating": "2.1.*",
+        "symfony/security": "2.1.*",
+        "symfony/twig-bridge": "2.1.*",
+        "monolog/monolog":"*",
+        "symfony/monolog-bridge":"*",
+        "symfony/config":"*",
+        "silex/silex": "1.0.*"
+    },
+    "minimum-stability": "dev"
+}

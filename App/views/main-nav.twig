@@ -1,0 +1,25 @@
+    <div id="header">
+        <h1>Shannon Supplies</h1>
+        {% autoescape false %} 
+        {{ app.cart_widget }}
+        {% endautoescape %}
+    </div>
+    <div class="shadowblockmenu">
+    <ul class="nav">
+      <li><a href="/store">Products</a></li>
+      <li><a href="/members">Membership</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+    <ul class="nav pull-right">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li><a  
+             href="/members/{{app.security.token.user.campus}}/{{app.security.token.user.memberid}}">Welcome {{ app.security.token.user.full_name }}</a></li>
+        <li><a  href="{{path('logout')}}">Logout</a></li>
+    {% else %}
+        <li><a href="{{ path('login') }}">Login</a><li>
+        <li><a href="/signup">SignUp</a><li>
+    {% endif %}
+
+    </ul>
+    </div>
+

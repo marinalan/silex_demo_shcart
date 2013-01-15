@@ -1,0 +1,58 @@
+{% extends "layout.twig"%}
+
+{% form_theme checkoutForm _self %}
+{% use 'form_div_layout.html.twig' with form_row as base_form_row %}
+{% block form_row %}
+    <tr> 
+       <td width="150" class="label">{{ label|trans({}, translation_domain) }}</td>
+       <td class="content">{{ form_widget(form) }}{{ form_errors(form) }}</td>
+    </tr>
+{% endblock form_row %}
+{% block _checkout1_payment_method_row %}
+    <tr class="entryTableHeader"> 
+       <th width="150" class="label">{{ label|trans({}, translation_domain) }}</th>
+       <td class="content">{{ form_widget(form) }}{{ form_errors(form) }}</td>
+    </tr>
+{% endblock _checkout1_payment_method_row %}
+{% block content %}
+<script language="JavaScript" type="text/javascript" src="/js/checkout.js"></script>
+<div id="checkout-container">
+  <h2>Enter Shipping And Payment Information</h2>
+  <form action="{{path('store.checkout')}}?step=1" method="post" name="frmCheckout" id="frmCheckout" 
+        onSubmit="return checkShippingAndPaymentInfo();">
+      <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" class="entryTable">
+          <tr class="entryTableHeader"> 
+              <th class="label">Shipping Address</th>
+              <th></th>
+          </tr>
+          {{ form_row(checkoutForm.shipping_fullname) }}
+          {{ form_row(checkoutForm.shipping_street) }}
+          {{ form_row(checkoutForm.shipping_city) }}
+          {{ form_row(checkoutForm.shipping_zip) }}
+          {{ form_row(checkoutForm.shipping_province_state) }}
+          {{ form_row(checkoutForm.shipping_country) }}
+          {{ form_row(checkoutForm.shipping_phone) }}
+      </table>
+      <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" class="entryTable">
+          <tr class="entryTableHeader"> 
+              <th width="150" class="label">Billing Address</th>
+              <th class="content"><input type="checkbox" name="chkSame" id="chkSame" value="checkbox" onClick="setPaymentInfo(this.checked);"> 
+                  <label for="chkSame" style="cursor:pointer">Same as shipping information</label></th>
+          </tr>
+          {{ form_row(checkoutForm.billing_fullname) }}
+          {{ form_row(checkoutForm.billing_street) }}
+          {{ form_row(checkoutForm.billing_city) }}
+          {{ form_row(checkoutForm.billing_zip) }}
+          {{ form_row(checkoutForm.billing_province_state) }}
+          {{ form_row(checkoutForm.billing_country) }}
+          {{ form_row(checkoutForm.billing_phone) }}
+          {{ form_row(checkoutForm.payment_method) }}
+      </table>
+      {{ form_rest(checkoutForm) }}
+    {# {form_widget(checkoutForm)}  #}
+      <p align="center"> 
+          <input class="box" name="btnStep1" type="submit" id="btnStep1" value="Proceed &gt;&gt;">
+      </p>
+  </form>
+</div>
+{% endblock %}

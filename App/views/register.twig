@@ -1,0 +1,10 @@
+{% extends "layout.twig"%}
+
+{% block content %}
+<form action="{{ path('signup') }}" method="post" id="signup-form">
+    {{form_widget(registerForm)}}
+  <div>
+  <input class="btn" type="submit" name="submit" value="Submit">
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+<?php
+# Example - copy to file App/private/braintree.php and replace with real keys
+# from your braintree environment
+Braintree_Configuration::environment('sandbox');
+Braintree_Configuration::merchantId('mmmmmmmmmmmmmmmm');
+Braintree_Configuration::publicKey('1111111111111111');
+Braintree_Configuration::privateKey('99999999999999999999999999999999');
+?>
