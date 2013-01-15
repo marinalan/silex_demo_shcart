@@ -1,9 +1,10 @@
-To fill vendor folder with dependencies code from Symphony, Silex, Braintree:
+To fill vendor folder with dependencies from Symphony, Silex, Braintree:
 
 curl -s http://getcomposer.org/installer | php
 
-# fix with exact path for composer.phar, which can be places in shared between
-# different PHP applications
+# fix with exact path for composer.phar, which can be re-used between
+# different PHP applications; for example "php ../composer.phar install" will
+# also work, if composer.phar is in parent folder
 php composer.phar install
 
 wget http://github.com/downloads/braintree/braintree_php/braintree-php-2.14.0.tgz
@@ -12,6 +13,7 @@ cd vendor
 # fix with exact path for downloaded file
 tar -xvzf braintree-php-2.14.0.tgz
 
+Requirements:
 PHP >= 5.3.10
 PECL intl >= PECL-2.0.1
 libicu-dev >= 49.1.2
@@ -38,4 +40,3 @@ sudo chmod -R 755 cache log
 
 TODO: I was planning to add to demo payment pages using sandbox accounts for braintree and paypal.
 Sorry - was lazy, it was Christmas and New Year after all
-
