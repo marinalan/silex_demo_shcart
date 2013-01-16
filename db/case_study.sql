@@ -139,7 +139,6 @@ insert into sh_relations ( account1_id, account2_id, circle1, circle2, created_a
 (3, 4, 'relatives', 'family', now(), now());
 
 insert into sh_products(id, sku, price, name, description, inventory_amount, created_at, updated_at) values
-(1, 'MMBR120', 40.00 , '120 day subscription','Membership subscription for unlimited access to social network and school supplies servuces for 120 next days period.',  0, now(), now()),
 (2, '650SLVA', 69.95 , 'Lumivella','"Missing link" in beauty science holds the key to ageless beauty while you sleep. 
     Cutting-edge formula taps into the very latest discovery in beauty science.
     Specifically designed to counteract the effects of internal and external stress on the complexion.  
