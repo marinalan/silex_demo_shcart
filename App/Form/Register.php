@@ -32,14 +32,6 @@ class Register extends AbstractType{
             'second_options'  => array('label' => 'Repeat Password'),
             'required' => true
         ));
-
-    $sql = "select code, name from sh_campuses";
-    $campuses = $this->conn->fetchAll($sql);
-    $choices = array();
-    foreach($campuses as $campus){
-      $choices[$campus['code']] = $campus['name'];
-    }
-    $builder->add('campus', 'choice', array('choices' => $choices, 'required' => true));
     $builder->add('phone',"text",array('label'=>'Telephone')); 
     $builder->add('street',"text",array('label'=>'Address Line 1')); 
     $builder->add('city',"text",array('label'=>'City / Town')); 

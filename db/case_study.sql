@@ -2,16 +2,9 @@ CREATE DATABASE IF NOT EXISTS casestudy CHARACTER SET utf8;
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER on casestudy.* to 'shannon'@'localhost' IDENTIFIED by  'k68aC7kXc5QsbRF';
 
 use casestudy;
-create table sh_campuses (
-  id              bigint unsigned not null AUTO_INCREMENT PRIMARY KEY,
-  code            char(6) not null  UNIQUE KEY,
-  name            varchar(255) not null
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 create table sh_accounts (
   id              bigint unsigned not null AUTO_INCREMENT PRIMARY KEY,
   memberid        char(20) not null  UNIQUE KEY,
-  campus          char(6)  REFERENCES  sh_campuses(code),
   email           varchar(128) not null  UNIQUE KEY,
   pwd             varchar(128) not null,
   full_name       varchar(255) not null,
@@ -120,26 +113,18 @@ create table sh_sessions (
   timestamp    int(11) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into sh_campuses(id, code, name) values
-(1,'qGhw8d','Applied and Natural Sciences'),
-(2,'J08cTN','Business and Media'),
-(3,'3I59vU','Computing and IT'),
-(4,'2CjVp8','Engineering'),
-(5,'d6F5sQ','Health Sciences'),
-(6,'xymd35','Trades and Apprenticeship'),
-(7,'90FCR4','Digital Arts');
 
-insert into sh_accounts(id, memberid, campus, email, pwd, full_name, street, city, zip, province_state, country, 
+insert into sh_accounts(id, memberid, email, pwd, full_name, street, city, zip, province_state, country, 
                         phone, expires_at, created_at, updated_at) values 
-(1, 'H4g03FhAyoY5AGuHitMg', 'qGhw8d', 'marina+michaljeff@marina-mac.local', SHA1('abc123'), 'Michael Jefferson', 
+(1, 'H4g03FhAyoY5AGuHitMg',  'marina+michaljeff@marina-mac.local', SHA1('abc123'), 'Michael Jefferson', 
  '#42 678766 Springfield Dr.', 'Richmond', 'V3Y 1Y6', 'BC', 'Canada', '406-234-4567', '2012-12-10', now(), now()),  
-(2, 'V7izK9LGq918N8ggWSMI', 'qGhw8d', 'marina+howareyou@marina-mac.local', SHA1('abc123'), 'Kiel Thompson', 
+(2, 'V7izK9LGq918N8ggWSMI',  'marina+howareyou@marina-mac.local', SHA1('abc123'), 'Kiel Thompson', 
  '#562-4527 Park Ave', 'Burnaby', 'I5W 2Y8', 'BC', 'Canada', '406-234-6782', '2012-12-30', now(), now()),  
-(3, 'm6zb5vxhs42ufouZ4pn8', '90FCR4', 'marina+junni@marina-mac.local', SHA1('abc123'), 'Lilac Tremp', 
+(3, 'm6zb5vxhs42ufouZ4pn8',  'marina+junni@marina-mac.local', SHA1('abc123'), 'Lilac Tremp', 
  '#25-289 St.', 'Pitt Meadows', 'K5U 7X8', 'BC', 'Canada', '406-234-2290', '2013-01-05', now(), now()),  
-(4, '6J78t00POB10o90b6qh9', 'd6F5sQ', 'marina+sullivan@marina-mac.local', SHA1('abc123'), 'Shanny Sullivan', 
+(4, '6J78t00POB10o90b6qh9',  'marina+sullivan@marina-mac.local', SHA1('abc123'), 'Shanny Sullivan', 
  '#42 678766 Springfield Dr.', 'Richmond', 'T5U 2Y8', 'BC', 'Canada', '406-234-2290', '2013-01-10', now(), now()),  
-(5, 'krYVA24h6P4B45pZQJY2', 'd6F5sQ', 'marina+karina@marina-mac.local', SHA1('abc123'), 'Karina Bristly', 
+(5, 'krYVA24h6P4B45pZQJY2',  'marina+karina@marina-mac.local', SHA1('abc123'), 'Karina Bristly', 
  '#324-3567 Cleverdale St.', 'Burnaby', 'I4W 8S8', 'BC', 'Canada', '406-234-2290', '2012-12-10', now(), now());  
 
 insert into sh_blogposts ( title, author, body, created_at, updated_at ) values

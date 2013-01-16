@@ -7,7 +7,6 @@ class User extends Base implements AdvancedUserInterface, \Serializable
 {
    protected $id=null;
    protected $memberid=null;
-   protected $campus=null;
    protected $email=null;
    protected $pwd=null;
    protected $full_name=null;

@@ -271,7 +271,7 @@ $app->get('/members', function () use ($app) {
     $members = $app['db']->fetchAll($sql);
     return $app["twig"]->render("members.twig", array('title'=>$pageTitle,"members" => $members));
 })->bind('members.index');
-$app->get('/members/{campus}/{memberid}', function ($memberid) use ($app) {
+$app->get('/members/{memberid}', function ($memberid) use ($app) {
   $pageTitle = 'Member Profile';
   $userManager = $app['user_manager'];
   $member = $userManager->getByMemberId($memberid);
