@@ -35,8 +35,14 @@ sudo pecl install intl
 sudo apachectl restart
 
 mkdir cache log
+# For macbook's built-in local apache server
 sudo chown -R _www:staff cache log
+# for Ubuntu, nginx or apache2:
+sudo chown -R www-data.www-data cache lg
+
 sudo chmod -R 755 cache log
+
+Was following free shopping cart tutorials and looking into project https://github.com/Mparaiso/Silex-Blog-App for examples.
 
 TODO: I was planning to add to demo payment pages using sandbox accounts for braintree and paypal.
 Sorry - was lazy, it was Christmas and New Year after all

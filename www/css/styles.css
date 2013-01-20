@@ -28,6 +28,21 @@ body > #container { height: auto; min-height: 100%; }
   font-size: 12px;
   line-height:14px;
 }
+#header h1 a {
+  text-decoration: none;
+  color: #666633;
+}
+#header h1 a:hover {
+  color: #663333;
+}
+.footer a, #content p a {
+  color: #0099CC;
+  text-decoration: none;
+}
+.footer a:hover, #content p a:hover {
+  color: #009900;
+  text-decoration: none;
+}
 #content { 
   padding-bottom: 3em;
  text-align: center; 
@@ -143,7 +158,7 @@ span.title_green_21px_p {
 .productbox {
   padding: 5px;
   width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 25px auto;
   text-align: left;
 }
 .productbox p {

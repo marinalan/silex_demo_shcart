@@ -256,7 +256,7 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 $app->get('/', function () use ($app) {
     $pageTitle = 'Case Study for Shannon';
     $cart_widget = $app['cart.widget'];
-    return $app["twig"]->render("layout.twig",array('title'=>$pageTitle));
+    return $app["twig"]->render("home.twig",array('title'=>$pageTitle));
 })->bind('home');
 $app->get('/info', function () use ($app) {
     return phpinfo();
