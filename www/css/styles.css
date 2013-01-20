@@ -30,10 +30,14 @@ body > #container { height: auto; min-height: 100%; }
 }
 #header h1 a {
   text-decoration: none;
-  color: #666633;
+  color: #996633;
 }
 #header h1 a:hover {
-  color: #663333;
+  color: #993333;
+}
+#header img.cat-logo {
+  position: absolute;
+  top: 0px; left: 40px;
 }
 .footer a, #content p a {
   color: #0099CC;
