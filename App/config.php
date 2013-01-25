@@ -1,8 +1,7 @@
 <?php
 /**
- * Silex Blog 
  * @author Marina Landisberg
- * Learning Silex and trying "case study for Shannon"
+ * Learning Silex
  * @copyright 2012
  */
 define('ROOT',dirname(__DIR__));
@@ -254,7 +253,7 @@ $app->get('/hello/{name}', function ($name) use ($app) {
   return $app["twig"]->render("layout.twig",array('title'=>$pageTitle));
 });
 $app->get('/', function () use ($app) {
-    $pageTitle = 'Case Study for Shannon';
+    $pageTitle = 'Case Study for interviews';
     $cart_widget = $app['cart.widget'];
     return $app["twig"]->render("home.twig",array('title'=>$pageTitle));
 })->bind('home');
